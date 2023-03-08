@@ -18,3 +18,15 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[color]
+	ui = auto 
+[diff] 
+	tool = meld 
+[difftool] 
+	prompt = false 
+[difftool "meld"] 
+	cmd = /usr/bin/meld $LOCAL $REMOTE 
+[merge] 
+	conflictstyle = diff3 tool = mymeld 
+[mergetool "mymeld"] 
+	prompt = false keepBackup = false keepTemporaries = false cmd = /usr/bin/meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE
